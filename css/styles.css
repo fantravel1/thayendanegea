@@ -2239,6 +2239,173 @@ blockquote cite {
 }
 
 /* ============================================================
+   INSIGHT CARDS (People Page — Relationship Insights)
+   ============================================================ */
+.insight-card {
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  border-top: 3px solid var(--color-ochre);
+}
+
+.insight-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+
+.insight-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-bark);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.insight-card__people {
+  font-family: var(--font-accent);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ochre);
+  margin-bottom: var(--space-md);
+}
+
+.insight-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-walnut);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   NUMBER CARDS (Language Page — Numbers in Kanien'kéha)
+   ============================================================ */
+.grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .grid-5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.number-card {
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.number-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.number-card__digit {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-ochre);
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+}
+
+.number-card__mohawk {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  color: var(--color-bark);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+
+.number-card__pronunciation {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-mist);
+  font-style: italic;
+}
+
+/* ============================================================
+   REMEMBRANCE TIMELINE (Legacy Page)
+   ============================================================ */
+.remembrance-timeline {
+  position: relative;
+  padding-left: var(--space-3xl);
+}
+
+.remembrance-timeline::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-ochre);
+  opacity: 0.3;
+}
+
+.remembrance-item {
+  position: relative;
+  padding-bottom: var(--space-xl);
+  display: flex;
+  gap: var(--space-lg);
+  align-items: flex-start;
+}
+
+.remembrance-item:last-child {
+  padding-bottom: 0;
+}
+
+.remembrance-item::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-3xl) + 6px);
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-ochre);
+  border: 3px solid var(--color-parchment);
+  box-shadow: 0 0 0 2px var(--color-ochre);
+  z-index: 1;
+}
+
+.remembrance-item__year {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-ochre);
+  min-width: 60px;
+  flex-shrink: 0;
+}
+
+.remembrance-item__content h4 {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  color: var(--color-bark);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+
+.remembrance-item__content p {
+  font-size: var(--text-sm);
+  color: var(--color-walnut);
+  line-height: 1.6;
+}
+
+/* ============================================================
    PRINT STYLES
    ============================================================ */
 @media print {
