@@ -334,17 +334,8 @@
       opacity: 0.6,
     }).addTo(map);
 
-    // Custom marker icon
-    var ochreIcon = L.divIcon({
-      className: 'atlas-marker',
-      html: '<svg width="24" height="32" viewBox="0 0 24 32"><path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 20 12 20s12-11 12-20C24 5.4 18.6 0 12 0z" fill="#C4883A" stroke="#8B6914" stroke-width="1"/><circle cx="12" cy="11" r="4" fill="#FAF8F3"/></svg>',
-      iconSize: [24, 32],
-      iconAnchor: [12, 32],
-      popupAnchor: [0, -32],
-    });
-
     // Historical places
-    var places = [
+    const places = [
       {
         lat: 42.95,
         lng: -74.18,
@@ -356,17 +347,17 @@
       {
         lat: 42.82,
         lng: -73.94,
-        name: "Fort Johnson / Johnson Hall",
-        period: '1740s–1770s',
-        desc: "Sir William Johnson's estate, where the young Thayendanegea entered the world of colonial diplomacy. Johnson's relationship with Molly Brant (Thayendanegea's sister) was pivotal.",
+        name: 'Fort Johnson / Johnson Hall',
+        period: '1740s\u20131770s',
+        desc: 'Sir William Johnson\'s estate, where the young Thayendanegea entered the world of colonial diplomacy. Johnson\'s relationship with Molly Brant (Thayendanegea\'s sister) was pivotal.',
         category: 'diplomacy',
       },
       {
-        lat: 42.45,
-        lng: -76.50,
-        name: "Moor's Charity School / Dartmouth",
-        period: '1761–1763',
-        desc: "Eleazar Wheelock's school in Lebanon, Connecticut, where Thayendanegea received formal English education, studying Latin, English literature, and Christianity.",
+        lat: 41.63,
+        lng: -72.25,
+        name: 'Moor\'s Charity School',
+        period: '1761\u20131763',
+        desc: 'Eleazar Wheelock\'s school in Lebanon, Connecticut, where Thayendanegea received formal English education, studying Latin, English literature, and Christianity.',
         category: 'origins',
       },
       {
@@ -375,7 +366,7 @@
         name: 'Fort Stanwix',
         period: '1768 Treaty / 1777 Siege',
         desc: 'Site of the 1768 Treaty of Fort Stanwix, which defined boundaries between colonial and Indigenous lands. Later besieged during the Revolutionary War.',
-        category: 'conflict',
+        category: 'diplomacy',
       },
       {
         lat: 42.68,
@@ -388,24 +379,24 @@
       {
         lat: 42.15,
         lng: -77.09,
-        name: "Newtown (Sullivan-Clinton Campaign)",
+        name: 'Newtown (Sullivan-Clinton Campaign)',
         period: 'August 1779',
-        desc: "Site of the Battle of Newtown, where Thayendanegea's forces confronted the Sullivan-Clinton campaign — a devastating scorched-earth invasion of Haudenosaunee homeland.",
+        desc: 'Site of the Battle of Newtown, where Thayendanegea\'s forces confronted the Sullivan-Clinton campaign \u2014 a devastating scorched-earth invasion of Haudenosaunee homeland.',
         category: 'conflict',
       },
       {
         lat: 44.23,
         lng: -76.48,
         name: 'Fort Haldimand (Carleton Island)',
-        period: '1778–1783',
+        period: '1778\u20131783',
         desc: 'British military post where Haudenosaunee loyalist refugees gathered during the war. A staging point for campaigns and a place of displacement.',
         category: 'conflict',
       },
       {
-        lat: 43.05,
-        lng: -79.85,
+        lat: 43.26,
+        lng: -79.07,
         name: 'Fort Niagara',
-        period: '1759–1780s',
+        period: '1759\u20131780s',
         desc: 'Major British post and refugee center. Thousands of displaced Haudenosaunee people sheltered here during and after the Revolutionary War, enduring harsh conditions.',
         category: 'diplomacy',
       },
@@ -414,31 +405,31 @@
         lng: -80.32,
         name: 'Six Nations of the Grand River',
         period: '1784 — Haldimand Tract',
-        desc: "The land grant along the Grand River, secured through the Haldimand Proclamation. Thayendanegea led the resettlement of Haudenosaunee people here. Today it remains the world's largest First Nations reserve.",
+        desc: 'The land grant along the Grand River, secured through the Haldimand Proclamation. Thayendanegea led the resettlement of Haudenosaunee people here. Today it remains the world\'s largest First Nations reserve.',
         category: 'settlement',
       },
       {
-        lat: 43.25,
-        lng: -79.87,
+        lat: 43.33,
+        lng: -79.80,
         name: 'Burlington Bay (Brant House)',
-        period: '1800–1807',
-        desc: "Thayendanegea's final residence at Burlington Bay (present-day Burlington, Ontario). He spent his last years here and passed away on November 24, 1807.",
+        period: '1800\u20131807',
+        desc: 'Thayendanegea\'s final residence at Burlington Bay (present-day Burlington, Ontario). He spent his last years here and passed away on November 24, 1807.',
         category: 'settlement',
       },
       {
-        lat: 43.25,
-        lng: -80.25,
+        lat: 43.14,
+        lng: -80.27,
         name: 'Brantford, Ontario',
         period: '19th Century — Present',
-        desc: "Named in honor of Thayendanegea. Home to His Majesty's Chapel of the Mohawks (1785), the oldest Protestant church in Ontario, and the Woodland Cultural Centre.",
+        desc: 'Named in honor of Thayendanegea. Home to His Majesty\'s Chapel of the Mohawks (1785), the oldest Protestant church in Ontario, and the Woodland Cultural Centre.',
         category: 'legacy',
       },
       {
         lat: 51.508,
         lng: -0.076,
         name: 'London, England',
-        period: '1775–1776 & 1786',
-        desc: "Thayendanegea visited London twice. He met King George III, sat for George Romney's famous portrait, was received by James Boswell, and advocated tirelessly for Haudenosaunee land rights.",
+        period: '1775\u20131776 & 1786',
+        desc: 'Thayendanegea visited London twice. He met King George III, sat for George Romney\'s famous portrait, was received by James Boswell, and advocated tirelessly for Haudenosaunee land rights.',
         category: 'diplomacy',
       },
       {
@@ -446,29 +437,61 @@
         lng: -81.03,
         name: 'Southern Campaigns',
         period: '1760s',
-        desc: "As a young warrior, Thayendanegea fought alongside the British during the Seven Years' War, including southern campaigns that shaped his early military experience.",
+        desc: 'As a young warrior, Thayendanegea fought alongside the British during the Seven Years\' War, including southern campaigns that shaped his early military experience.',
         category: 'conflict',
       },
       {
-        lat: 42.44,
-        lng: -76.50,
+        lat: 42.10,
+        lng: -75.80,
         name: 'Oquaga (Onaquaga)',
         period: '1770s',
         desc: 'A multi-tribal Haudenosaunee community on the Susquehanna River. Thayendanegea helped establish a church and school here and used it as a base during the early Revolutionary War period.',
         category: 'origins',
       },
       {
-        lat: 43.38,
-        lng: -80.42,
+        lat: 43.17,
+        lng: -80.26,
         name: 'Woodland Cultural Centre',
         period: 'Present Day',
         desc: 'Located in Brantford, this centre preserves and promotes the culture and heritage of First Nations peoples. A vital living connection to Haudenosaunee traditions.',
         category: 'legacy',
       },
+      {
+        lat: 43.04,
+        lng: -76.14,
+        name: 'Onondaga (Grand Council)',
+        period: 'Pre-contact \u2014 Present',
+        desc: 'The seat of the Haudenosaunee Grand Council and keeper of the Central Fire. All major political decisions of the Confederacy were deliberated here, including the fateful split during the Revolution.',
+        category: 'origins',
+      },
+      {
+        lat: 40.71,
+        lng: -74.01,
+        name: 'New York City',
+        period: '1775\u20131776',
+        desc: 'Thayendanegea sailed from New York for London in November 1775 with Guy Johnson. He returned the following year, transformed by his diplomatic experiences with the Crown.',
+        category: 'diplomacy',
+      },
+      {
+        lat: 42.88,
+        lng: -78.88,
+        name: 'Buffalo Creek',
+        period: '1780s\u20131800s',
+        desc: 'After the Revolution, Buffalo Creek became a major Seneca settlement and council site. Thayendanegea attended councils here negotiating land issues and inter-nation politics.',
+        category: 'settlement',
+      },
+      {
+        lat: 44.75,
+        lng: -75.50,
+        name: 'Oswegatchie',
+        period: '1780s',
+        desc: 'British-allied settlement on the upper St. Lawrence River. Part of the loyalist corridor where displaced Haudenosaunee and their allies resettled after the Revolution.',
+        category: 'settlement',
+      },
     ];
 
     // Category colors
-    var categoryColors = {
+    const categoryColors = {
       origins: '#4A7C2E',
       diplomacy: '#5B8FA8',
       conflict: '#8B3A2A',
@@ -476,59 +499,200 @@
       legacy: '#6B5B8A',
     };
 
+    // Store markers by category for filtering
+    const markersByCategory = {};
+    const allMarkers = [];
+    const markersByCoords = {};
+
     // Add markers
     places.forEach(function (place) {
-      var color = categoryColors[place.category] || '#C4883A';
-      var icon = L.divIcon({
+      const color = categoryColors[place.category] || '#C4883A';
+      const icon = L.divIcon({
         className: 'atlas-marker',
         html:
-          '<svg width="24" height="32" viewBox="0 0 24 32"><path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 20 12 20s12-11 12-20C24 5.4 18.6 0 12 0z" fill="' +
+          '<svg width="28" height="38" viewBox="0 0 28 38"><path d="M14 0C6.3 0 0 6.3 0 14c0 10.5 14 24 14 24s14-13.5 14-24C28 6.3 21.7 0 14 0z" fill="' +
           color +
-          '" stroke="rgba(0,0,0,0.2)" stroke-width="1"/><circle cx="12" cy="11" r="4" fill="#FAF8F3"/></svg>',
-        iconSize: [24, 32],
-        iconAnchor: [12, 32],
-        popupAnchor: [0, -32],
+          '" stroke="rgba(0,0,0,0.25)" stroke-width="1"/><circle cx="14" cy="13" r="5" fill="#FAF8F3" opacity="0.9"/></svg>',
+        iconSize: [28, 38],
+        iconAnchor: [14, 38],
+        popupAnchor: [0, -38],
       });
 
-      L.marker([place.lat, place.lng], { icon: icon })
+      const marker = L.marker([place.lat, place.lng], { icon: icon })
         .addTo(map)
         .bindPopup(
-          '<h3>' +
-            place.name +
-            '</h3>' +
-            '<p class="popup-period">' +
-            place.period +
-            '</p>' +
-            '<p>' +
-            place.desc +
-            '</p>'
+          '<div class="atlas-popup">' +
+            '<div class="atlas-popup__category" style="background:' + color + ';">' + place.category.charAt(0).toUpperCase() + place.category.slice(1) + '</div>' +
+            '<h3>' + place.name + '</h3>' +
+            '<p class="popup-period">' + place.period + '</p>' +
+            '<p>' + place.desc + '</p>' +
+          '</div>'
         );
+
+      // Store reference
+      if (!markersByCategory[place.category]) {
+        markersByCategory[place.category] = [];
+      }
+      markersByCategory[place.category].push(marker);
+      allMarkers.push(marker);
+
+      // Store by coords for sidebar lookup
+      const coordKey = place.lat.toFixed(2) + ',' + place.lng.toFixed(2);
+      markersByCoords[coordKey] = marker;
     });
 
-    // Map layer toggle buttons
+    // Journey route paths
+    const journeyPaths = [
+      {
+        name: 'Youth & Education (1743\u20131763)',
+        color: '#4A7C2E',
+        coords: [
+          [42.95, -74.18], // Canajoharie
+          [42.82, -73.94], // Fort Johnson
+          [41.63, -72.25], // Moor's Charity School
+        ],
+      },
+      {
+        name: 'First London Journey (1775\u20131776)',
+        color: '#5B8FA8',
+        dashArray: '8, 6',
+        coords: [
+          [42.95, -74.18], // Mohawk Valley
+          [40.71, -74.01], // New York City
+          [51.508, -0.076], // London
+        ],
+      },
+      {
+        name: 'Revolutionary War (1777\u20131783)',
+        color: '#8B3A2A',
+        coords: [
+          [42.10, -75.80], // Oquaga
+          [42.98, -74.84], // Fort Stanwix
+          [42.68, -74.97], // Cherry Valley
+          [42.15, -77.09], // Newtown
+          [44.23, -76.48], // Fort Haldimand
+          [43.26, -79.07], // Fort Niagara
+        ],
+      },
+      {
+        name: 'Grand River Settlement (1784\u20131807)',
+        color: '#C4883A',
+        coords: [
+          [43.26, -79.07], // Fort Niagara
+          [43.07, -80.32], // Six Nations
+          [43.33, -79.80], // Burlington Bay
+        ],
+      },
+    ];
+
+    const journeyLayers = [];
+    journeyPaths.forEach(function (journey) {
+      const polyline = L.polyline(journey.coords, {
+        color: journey.color,
+        weight: 3,
+        opacity: 0.7,
+        dashArray: journey.dashArray || null,
+        smoothFactor: 1.5,
+      }).addTo(map);
+      polyline.bindTooltip(journey.name, { sticky: true, className: 'journey-tooltip' });
+      journeyLayers.push(polyline);
+    });
+
+    // Category filter buttons — actually show/hide markers
+    let activeCategory = 'all';
     document.querySelectorAll('.atlas-controls button').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        var category = btn.getAttribute('data-category');
+        const category = btn.getAttribute('data-category');
+        activeCategory = category;
+
+        // Update button states
         document.querySelectorAll('.atlas-controls button').forEach(function (b) {
           b.classList.remove('active');
         });
         btn.classList.add('active');
 
-        // This would filter markers in a more complex implementation
-        // For now, just visual feedback
+        // Show/hide markers
+        allMarkers.forEach(function (marker) {
+          map.removeLayer(marker);
+        });
+
+        if (category === 'all') {
+          allMarkers.forEach(function (marker) {
+            marker.addTo(map);
+          });
+          journeyLayers.forEach(function (layer) { layer.addTo(map); });
+        } else {
+          if (markersByCategory[category]) {
+            markersByCategory[category].forEach(function (marker) {
+              marker.addTo(map);
+            });
+          }
+          journeyLayers.forEach(function (layer) { map.removeLayer(layer); });
+        }
+
+        // Filter sidebar place cards
+        document.querySelectorAll('.place-card').forEach(function (card) {
+          const cardCategory = card.getAttribute('data-category');
+          if (category === 'all' || cardCategory === category) {
+            card.style.display = '';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(10px)';
+            requestAnimationFrame(function () {
+              card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            });
+          } else {
+            card.style.display = 'none';
+          }
+        });
       });
     });
 
-    // Sidebar place card clicks
+    // Sidebar place card clicks — fly to location and open popup
     document.querySelectorAll('.place-card').forEach(function (card) {
       card.addEventListener('click', function () {
-        var lat = parseFloat(card.getAttribute('data-lat'));
-        var lng = parseFloat(card.getAttribute('data-lng'));
-        if (!isNaN(lat) && !isNaN(lng)) {
-          map.flyTo([lat, lng], 10, { duration: 1.5 });
+        const lat = parseFloat(card.getAttribute('data-lat'));
+        const lng = parseFloat(card.getAttribute('data-lng'));
+        if (isNaN(lat) || isNaN(lng)) return;
+
+        // Remove active from all cards
+        document.querySelectorAll('.place-card').forEach(function (c) {
+          c.classList.remove('place-card--active');
+        });
+        card.classList.add('place-card--active');
+
+        // Fly to location
+        map.flyTo([lat, lng], 10, { duration: 1.5 });
+
+        // Find and open corresponding marker popup
+        const coordKey = lat.toFixed(2) + ',' + lng.toFixed(2);
+        const marker = markersByCoords[coordKey];
+        if (marker) {
+          setTimeout(function () {
+            marker.openPopup();
+          }, 1600);
         }
       });
     });
+
+    // Journey path toggle
+    const journeyToggle = document.getElementById('toggle-journeys');
+    let journeysVisible = true;
+    if (journeyToggle) {
+      journeyToggle.addEventListener('click', function () {
+        journeysVisible = !journeysVisible;
+        journeyToggle.classList.toggle('active', journeysVisible);
+        if (activeCategory !== 'all') return;
+        journeyLayers.forEach(function (layer) {
+          if (journeysVisible) {
+            layer.addTo(map);
+          } else {
+            map.removeLayer(layer);
+          }
+        });
+      });
+    }
   }
 
   // Initialize map when DOM is ready

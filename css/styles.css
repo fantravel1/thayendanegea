@@ -2015,6 +2015,230 @@ blockquote cite {
 .text-forest  { color: var(--color-forest); }
 
 /* ============================================================
+   BACK TO TOP BUTTON
+   ============================================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: var(--z-sticky);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-bark);
+  color: var(--color-parchment);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.back-to-top:hover {
+  background: var(--color-ochre);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================================================
+   JOURNEY CARDS (Atlas Page)
+   ============================================================ */
+.journey-card {
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl) var(--space-xl) var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.journey-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.journey-card__route {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.journey-card__line {
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.journey-card__line--dashed {
+  height: 3px;
+  background: none !important;
+}
+
+.journey-card__label {
+  font-family: var(--font-accent);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-mist);
+  white-space: nowrap;
+}
+
+.journey-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-bark);
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+
+.journey-card__period {
+  font-family: var(--font-accent);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ochre);
+  margin-bottom: var(--space-md);
+}
+
+.journey-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-walnut);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+.journey-card__stops {
+  font-family: var(--font-accent);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  color: var(--color-mist);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-smoke);
+}
+
+/* ============================================================
+   FACT CARDS (Homepage Did You Know)
+   ============================================================ */
+.fact-card {
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  text-align: center;
+}
+
+.fact-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.fact-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(196, 136, 58, 0.08);
+  margin: 0 auto var(--space-lg);
+  color: var(--color-ochre);
+}
+
+.fact-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-bark);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.fact-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-walnut);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   ACTIVE PLACE CARD (Atlas Sidebar)
+   ============================================================ */
+.place-card--active {
+  background: var(--color-parchment);
+  border-left: 3px solid var(--color-ochre);
+}
+
+.place-card--active .place-card__name {
+  color: var(--color-ochre);
+}
+
+/* ============================================================
+   ATLAS POPUP ENHANCEMENTS
+   ============================================================ */
+.atlas-popup__category {
+  display: inline-block;
+  font-family: var(--font-accent);
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 10px;
+  color: var(--color-white);
+  margin-bottom: 6px;
+}
+
+/* ============================================================
+   JOURNEY TOOLTIP (Leaflet Override)
+   ============================================================ */
+.journey-tooltip {
+  font-family: var(--font-accent) !important;
+  font-size: 0.65rem !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  padding: 4px 10px !important;
+  border-radius: 4px !important;
+  background: rgba(27, 18, 8, 0.85) !important;
+  color: var(--color-parchment) !important;
+  border: none !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.journey-tooltip::before {
+  display: none !important;
+}
+
+/* ============================================================
+   ATLAS CONTROLS JOURNEY TOGGLE
+   ============================================================ */
+.atlas-controls__journey {
+  margin-left: auto;
+  background: var(--color-linen) !important;
+  border-color: var(--color-ochre) !important;
+  color: var(--color-ochre) !important;
+}
+
+.atlas-controls__journey.active {
+  background: var(--color-ochre) !important;
+  color: var(--color-white) !important;
+}
+
+/* ============================================================
    PRINT STYLES
    ============================================================ */
 @media print {

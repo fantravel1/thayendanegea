@@ -84,6 +84,7 @@
             <button data-category="conflict">Conflict</button>
             <button data-category="settlement">Settlement</button>
             <button data-category="legacy">Modern Legacy</button>
+            <button id="toggle-journeys" class="atlas-controls__journey active" title="Toggle journey paths">Journey Paths</button>
           </div>
 
           <!-- Map + Sidebar -->
@@ -92,72 +93,192 @@
             <aside class="atlas-sidebar">
               <h3 style="font-family: var(--font-display); margin-bottom: var(--space-lg);">Key Places</h3>
 
-              <div class="place-card" data-lat="42.95" data-lng="-74.18">
+              <div class="place-card" data-lat="42.95" data-lng="-74.18" data-category="origins">
                 <h4 class="place-card__name">Canajoharie</h4>
                 <div class="place-card__period">c. 1743 — Birthplace Region</div>
                 <p class="place-card__summary">Upper Mohawk Castle — the community where Thayendanegea spent his early years.</p>
               </div>
 
-              <div class="place-card" data-lat="42.82" data-lng="-73.94">
+              <div class="place-card" data-lat="42.82" data-lng="-73.94" data-category="diplomacy">
                 <h4 class="place-card__name">Fort Johnson / Johnson Hall</h4>
                 <div class="place-card__period">1740s–1770s</div>
                 <p class="place-card__summary">Sir William Johnson's estate. Gateway to colonial diplomacy.</p>
               </div>
 
-              <div class="place-card" data-lat="42.98" data-lng="-74.84">
+              <div class="place-card" data-lat="41.63" data-lng="-72.25" data-category="origins">
+                <h4 class="place-card__name">Moor's Charity School</h4>
+                <div class="place-card__period">1761–1763</div>
+                <p class="place-card__summary">Wheelock's school in Lebanon, Connecticut. Thayendanegea received English education here.</p>
+              </div>
+
+              <div class="place-card" data-lat="42.98" data-lng="-74.84" data-category="diplomacy">
                 <h4 class="place-card__name">Fort Stanwix</h4>
                 <div class="place-card__period">1768 Treaty / 1777 Siege</div>
                 <p class="place-card__summary">Site of the pivotal 1768 Treaty and later Revolutionary War siege.</p>
               </div>
 
-              <div class="place-card" data-lat="43.07" data-lng="-80.32">
-                <h4 class="place-card__name">Six Nations of the Grand River</h4>
-                <div class="place-card__period">1784 — Haldimand Tract</div>
-                <p class="place-card__summary">The land grant that became the largest First Nations reserve in Canada.</p>
+              <div class="place-card" data-lat="43.04" data-lng="-76.14" data-category="origins">
+                <h4 class="place-card__name">Onondaga (Grand Council)</h4>
+                <div class="place-card__period">Pre-contact — Present</div>
+                <p class="place-card__summary">Seat of the Haudenosaunee Grand Council and keeper of the Central Fire.</p>
               </div>
 
-              <div class="place-card" data-lat="43.25" data-lng="-79.87">
-                <h4 class="place-card__name">Burlington Bay</h4>
-                <div class="place-card__period">1800–1807</div>
-                <p class="place-card__summary">Thayendanegea's final residence where he spent his last years.</p>
+              <div class="place-card" data-lat="42.10" data-lng="-75.80" data-category="origins">
+                <h4 class="place-card__name">Oquaga (Onaquaga)</h4>
+                <div class="place-card__period">1770s</div>
+                <p class="place-card__summary">Multi-tribal community on the Susquehanna. Thayendanegea's wartime base.</p>
               </div>
 
-              <div class="place-card" data-lat="51.508" data-lng="-0.076">
+              <div class="place-card" data-lat="40.71" data-lng="-74.01" data-category="diplomacy">
+                <h4 class="place-card__name">New York City</h4>
+                <div class="place-card__period">1775–1776</div>
+                <p class="place-card__summary">Departure point for Thayendanegea's first transatlantic voyage to London.</p>
+              </div>
+
+              <div class="place-card" data-lat="51.508" data-lng="-0.076" data-category="diplomacy">
                 <h4 class="place-card__name">London, England</h4>
                 <div class="place-card__period">1775–1776 &amp; 1786</div>
                 <p class="place-card__summary">Two diplomatic missions — met the King, sat for the Romney portrait.</p>
               </div>
 
-              <div class="place-card" data-lat="43.25" data-lng="-80.25">
-                <h4 class="place-card__name">Brantford, Ontario</h4>
-                <div class="place-card__period">Present Day</div>
-                <p class="place-card__summary">Named in his honor. Home to the Chapel of the Mohawks.</p>
-              </div>
-
-              <div class="place-card" data-lat="43.05" data-lng="-79.85">
-                <h4 class="place-card__name">Fort Niagara</h4>
-                <div class="place-card__period">1759–1780s</div>
-                <p class="place-card__summary">British post and refugee center during the Revolutionary War.</p>
-              </div>
-
-              <div class="place-card" data-lat="42.15" data-lng="-77.09">
-                <h4 class="place-card__name">Newtown (Elmira)</h4>
-                <div class="place-card__period">August 1779</div>
-                <p class="place-card__summary">Battle site during the Sullivan-Clinton Campaign.</p>
-              </div>
-
-              <div class="place-card" data-lat="42.68" data-lng="-74.97">
+              <div class="place-card" data-lat="42.68" data-lng="-74.97" data-category="conflict">
                 <h4 class="place-card__name">Cherry Valley</h4>
                 <div class="place-card__period">November 1778</div>
                 <p class="place-card__summary">A controversial engagement of the frontier war.</p>
               </div>
 
-              <div class="place-card" data-lat="43.38" data-lng="-80.42">
+              <div class="place-card" data-lat="42.15" data-lng="-77.09" data-category="conflict">
+                <h4 class="place-card__name">Newtown (Elmira)</h4>
+                <div class="place-card__period">August 1779</div>
+                <p class="place-card__summary">Battle site during the Sullivan-Clinton Campaign.</p>
+              </div>
+
+              <div class="place-card" data-lat="44.23" data-lng="-76.48" data-category="conflict">
+                <h4 class="place-card__name">Fort Haldimand</h4>
+                <div class="place-card__period">1778–1783</div>
+                <p class="place-card__summary">Carleton Island staging post for loyalist and Haudenosaunee refugees.</p>
+              </div>
+
+              <div class="place-card" data-lat="43.26" data-lng="-79.07" data-category="diplomacy">
+                <h4 class="place-card__name">Fort Niagara</h4>
+                <div class="place-card__period">1759–1780s</div>
+                <p class="place-card__summary">British post and refugee center during the Revolutionary War.</p>
+              </div>
+
+              <div class="place-card" data-lat="43.07" data-lng="-80.32" data-category="settlement">
+                <h4 class="place-card__name">Six Nations of the Grand River</h4>
+                <div class="place-card__period">1784 — Haldimand Tract</div>
+                <p class="place-card__summary">The land grant that became the largest First Nations reserve in Canada.</p>
+              </div>
+
+              <div class="place-card" data-lat="42.88" data-lng="-78.88" data-category="settlement">
+                <h4 class="place-card__name">Buffalo Creek</h4>
+                <div class="place-card__period">1780s–1800s</div>
+                <p class="place-card__summary">Major Seneca settlement and council site for post-war negotiations.</p>
+              </div>
+
+              <div class="place-card" data-lat="43.33" data-lng="-79.80" data-category="settlement">
+                <h4 class="place-card__name">Burlington Bay</h4>
+                <div class="place-card__period">1800–1807</div>
+                <p class="place-card__summary">Thayendanegea's final residence where he spent his last years.</p>
+              </div>
+
+              <div class="place-card" data-lat="43.14" data-lng="-80.27" data-category="legacy">
+                <h4 class="place-card__name">Brantford, Ontario</h4>
+                <div class="place-card__period">Present Day</div>
+                <p class="place-card__summary">Named in his honor. Home to the Chapel of the Mohawks.</p>
+              </div>
+
+              <div class="place-card" data-lat="43.17" data-lng="-80.26" data-category="legacy">
                 <h4 class="place-card__name">Woodland Cultural Centre</h4>
                 <div class="place-card__period">Present Day</div>
                 <p class="place-card__summary">Preserves and promotes First Nations culture and heritage.</p>
               </div>
             </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNEY PATHS -->
+    <section class="section section--linen" id="journey-paths">
+      <div class="container">
+        <div class="text-center mb-3xl reveal">
+          <span class="accent-text">Trace His Steps</span>
+          <h2 class="display-text mt-md">Four Journeys That Shaped a Life</h2>
+          <p class="lead-text" style="max-width: 620px; margin: var(--space-lg) auto 0;">
+            From the Mohawk Valley to the courts of London, from the battlefields of the Revolution
+            to the settlement of the Grand River — these journeys defined Thayendanegea's world.
+          </p>
+        </div>
+
+        <div class="grid grid-2 stagger-children" style="gap: var(--space-xl);">
+          <div class="journey-card reveal">
+            <div class="journey-card__route">
+              <div class="journey-card__line" style="background: #4A7C2E;"></div>
+              <span class="journey-card__label">4 Stops</span>
+            </div>
+            <h3 class="journey-card__title">Youth &amp; Education</h3>
+            <div class="journey-card__period">1743–1763</div>
+            <p class="journey-card__desc">
+              Born near Canajoharie in the Mohawk Valley, the young Thayendanegea entered Sir William Johnson's orbit at Fort Johnson,
+              then traveled to Lebanon, Connecticut for formal English education at Moor's Charity School. These formative years gave him
+              fluency in two worlds — a skill that would define his entire career.
+            </p>
+            <div class="journey-card__stops">
+              Canajoharie &rarr; Fort Johnson &rarr; Onondaga &rarr; Moor's Charity School
+            </div>
+          </div>
+
+          <div class="journey-card reveal">
+            <div class="journey-card__route">
+              <div class="journey-card__line journey-card__line--dashed" style="background: repeating-linear-gradient(90deg, #5B8FA8 0, #5B8FA8 8px, transparent 8px, transparent 14px);"></div>
+              <span class="journey-card__label">Transatlantic</span>
+            </div>
+            <h3 class="journey-card__title">The London Mission</h3>
+            <div class="journey-card__period">1775–1776</div>
+            <p class="journey-card__desc">
+              Sailing from New York City with Guy Johnson, Thayendanegea crossed the Atlantic to meet King George III and advocate for
+              Haudenosaunee land rights. In London, George Romney painted his iconic portrait. He returned to America with a commitment
+              to the British alliance — and a determination that would drive the next decade of his life.
+            </p>
+            <div class="journey-card__stops">
+              Mohawk Valley &rarr; New York City &rarr; London, England
+            </div>
+          </div>
+
+          <div class="journey-card reveal">
+            <div class="journey-card__route">
+              <div class="journey-card__line" style="background: #8B3A2A;"></div>
+              <span class="journey-card__label">6 Engagements</span>
+            </div>
+            <h3 class="journey-card__title">The Revolutionary War</h3>
+            <div class="journey-card__period">1777–1783</div>
+            <p class="journey-card__desc">
+              From his base at Oquaga, Thayendanegea led Haudenosaunee and loyalist forces through some of the most contested battles
+              of the frontier war — Fort Stanwix, Cherry Valley, Newtown. The Sullivan-Clinton scorched-earth campaign devastated
+              the Haudenosaunee homeland, driving refugees to Fort Haldimand and Fort Niagara.
+            </p>
+            <div class="journey-card__stops">
+              Oquaga &rarr; Fort Stanwix &rarr; Cherry Valley &rarr; Newtown &rarr; Fort Haldimand &rarr; Fort Niagara
+            </div>
+          </div>
+
+          <div class="journey-card reveal">
+            <div class="journey-card__route">
+              <div class="journey-card__line" style="background: #C4883A;"></div>
+              <span class="journey-card__label">Resettlement</span>
+            </div>
+            <h3 class="journey-card__title">Grand River Settlement</h3>
+            <div class="journey-card__period">1784–1807</div>
+            <p class="journey-card__desc">
+              After the war, Thayendanegea secured the Haldimand Tract along the Grand River and led the resettlement of
+              displaced Haudenosaunee people. He spent his final years at Burlington Bay, continuing to negotiate land rights
+              and translate religious texts into Mohawk until his death in 1807.
+            </p>
+            <div class="journey-card__stops">
+              Fort Niagara &rarr; Six Nations Grand River &rarr; Burlington Bay
+            </div>
           </div>
         </div>
       </div>
@@ -247,22 +368,61 @@
               <p style="font-size: var(--text-sm); color: var(--color-walnut);">Present-day memorials, cultural centres, and heritage sites.</p>
             </div>
           </div>
+          <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+            <div style="width: 16px; height: 4px; background: var(--color-walnut); flex-shrink: 0; margin-top: 10px; border-radius: 2px;"></div>
+            <div>
+              <h4 style="font-size: var(--text-base); margin-bottom: 4px;">Journey Paths</h4>
+              <p style="font-size: var(--text-sm); color: var(--color-walnut);">Connecting lines trace major journeys. Toggle them on or off with the Journey Paths button.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATLAS STATS -->
+    <section class="section section--earth">
+      <div class="container">
+        <div class="stats-row reveal">
+          <div class="stat">
+            <div class="stat__number" data-count="19" data-suffix="">0</div>
+            <div class="stat__label">Places Mapped</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number" data-count="4">0</div>
+            <div class="stat__label">Journey Routes</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number" data-count="5">0</div>
+            <div class="stat__label">Map Categories</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number" data-count="3" data-suffix="">0</div>
+            <div class="stat__label">Continents Spanned</div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="section section--earth text-center">
+    <section class="section section--dark text-center">
       <div class="container reveal">
-        <span class="accent-text">Continue</span>
+        <span class="accent-text">Continue Your Exploration</span>
         <h2 class="display-text mt-md" style="color: var(--color-parchment);">Explore the Source Vault</h2>
         <p style="color: var(--color-smoke); max-width: 550px; margin: var(--space-lg) auto var(--space-2xl);">
           See the portraits, letters, maps, and documents connected to these places.
         </p>
-        <a href="sources.html" class="btn btn--primary btn--lg">Open the Source Vault</a>
+        <div style="display: flex; flex-wrap: wrap; gap: var(--space-md); justify-content: center;">
+          <a href="sources.html" class="btn btn--primary btn--lg">Open the Source Vault</a>
+          <a href="timeline.html" class="btn btn--secondary btn--lg">View the Timeline</a>
+        </div>
       </div>
     </section>
   </main>
+
+  <!-- BACK TO TOP -->
+  <a href="#" class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </a>
 
   <footer class="site-footer">
     <div class="container">
