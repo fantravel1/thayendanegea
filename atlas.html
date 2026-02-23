@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Atlas — Places That Built the Story of Thayendanegea</title>
+  <meta name="description" content="An interactive map exploring the key places in the life of Thayendanegea (Joseph Brant) and the Haudenosaunee world — from the Mohawk Valley to London, from Fort Niagara to the Grand River.">
+  <meta name="keywords" content="Thayendanegea map, Joseph Brant atlas, Haudenosaunee territory map, Six Nations map, Mohawk Valley map, Grand River map, Indigenous history geography">
+  <link rel="canonical" href="https://thayendanegea.com/atlas.html">
+
+  <meta property="og:title" content="Interactive Atlas — The Geography of Thayendanegea's World">
+  <meta property="og:description" content="Map the Mohawk Valley, battle sites, diplomatic journeys, and the Grand River settlement.">
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Iroquois_6_Nations_map_c1720.png/1280px-Iroquois_6_Nations_map_c1720.png">
+  <meta property="og:url" content="https://thayendanegea.com/atlas.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Interactive Atlas of Thayendanegea's World",
+    "description": "An interactive map exploring key places in the life of Thayendanegea and the Haudenosaunee world."
+  }
+  </script>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .atlas-marker {
+      background: none !important;
+      border: none !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-wrapper">
+      <a href="index.html" class="site-logo">Thayendanegea<span>.com</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="biography.html">Biography</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="atlas.html" class="active">Atlas</a>
+        <a href="sources.html">Sources</a>
+        <a href="people.html">People</a>
+        <a href="language.html">Language</a>
+        <a href="legacy.html">Legacy</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+  <div class="mobile-overlay"></div>
+  <nav class="mobile-menu"><a href="index.html">Home</a><a href="biography.html">Biography</a><a href="timeline.html">Timeline</a><a href="atlas.html">Atlas</a><a href="sources.html">Sources</a><a href="people.html">People</a><a href="language.html">Language</a><a href="legacy.html">Legacy</a></nav>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container page-hero__content">
+        <nav class="breadcrumbs"><a href="index.html">Home</a><span>/</span><span>Atlas</span></nav>
+        <span class="page-hero__eyebrow">The Interactive Atlas</span>
+        <h1 class="page-hero__title">Places That Built the Story</h1>
+        <p class="page-hero__desc">
+          An interactive map of the Mohawk Valley, battle sites, diplomatic journeys, settlement regions, and memorial locations — from 18th-century Haudenosaunee homeland to the Grand River and across the Atlantic.
+        </p>
+      </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section class="section" style="padding-top: var(--space-xl);">
+      <div class="container container--lg">
+        <div class="atlas-container reveal">
+          <!-- Controls -->
+          <div class="atlas-controls">
+            <button class="active" data-category="all">All Places</button>
+            <button data-category="origins">Origins</button>
+            <button data-category="diplomacy">Diplomacy</button>
+            <button data-category="conflict">Conflict</button>
+            <button data-category="settlement">Settlement</button>
+            <button data-category="legacy">Modern Legacy</button>
+          </div>
+
+          <!-- Map + Sidebar -->
+          <div class="atlas-layout">
+            <div id="atlas-map" class="atlas-map" role="application" aria-label="Interactive map of historical places"></div>
+            <aside class="atlas-sidebar">
+              <h3 style="font-family: var(--font-display); margin-bottom: var(--space-lg);">Key Places</h3>
+
+              <div class="place-card" data-lat="42.95" data-lng="-74.18">
+                <h4 class="place-card__name">Canajoharie</h4>
+                <div class="place-card__period">c. 1743 — Birthplace Region</div>
+                <p class="place-card__summary">Upper Mohawk Castle — the community where Thayendanegea spent his early years.</p>
+              </div>
+
+              <div class="place-card" data-lat="42.82" data-lng="-73.94">
+                <h4 class="place-card__name">Fort Johnson / Johnson Hall</h4>
+                <div class="place-card__period">1740s–1770s</div>
+                <p class="place-card__summary">Sir William Johnson's estate. Gateway to colonial diplomacy.</p>
+              </div>
+
+              <div class="place-card" data-lat="42.98" data-lng="-74.84">
+                <h4 class="place-card__name">Fort Stanwix</h4>
+                <div class="place-card__period">1768 Treaty / 1777 Siege</div>
+                <p class="place-card__summary">Site of the pivotal 1768 Treaty and later Revolutionary War siege.</p>
+              </div>
+
+              <div class="place-card" data-lat="43.07" data-lng="-80.32">
+                <h4 class="place-card__name">Six Nations of the Grand River</h4>
+                <div class="place-card__period">1784 — Haldimand Tract</div>
+                <p class="place-card__summary">The land grant that became the largest First Nations reserve in Canada.</p>
+              </div>
+
+              <div class="place-card" data-lat="43.25" data-lng="-79.87">
+                <h4 class="place-card__name">Burlington Bay</h4>
+                <div class="place-card__period">1800–1807</div>
+                <p class="place-card__summary">Thayendanegea's final residence where he spent his last years.</p>
+              </div>
+
+              <div class="place-card" data-lat="51.508" data-lng="-0.076">
+                <h4 class="place-card__name">London, England</h4>
+                <div class="place-card__period">1775–1776 &amp; 1786</div>
+                <p class="place-card__summary">Two diplomatic missions — met the King, sat for the Romney portrait.</p>
+              </div>
+
+              <div class="place-card" data-lat="43.25" data-lng="-80.25">
+                <h4 class="place-card__name">Brantford, Ontario</h4>
+                <div class="place-card__period">Present Day</div>
+                <p class="place-card__summary">Named in his honor. Home to the Chapel of the Mohawks.</p>
+              </div>
+
+              <div class="place-card" data-lat="43.05" data-lng="-79.85">
+                <h4 class="place-card__name">Fort Niagara</h4>
+                <div class="place-card__period">1759–1780s</div>
+                <p class="place-card__summary">British post and refugee center during the Revolutionary War.</p>
+              </div>
+
+              <div class="place-card" data-lat="42.15" data-lng="-77.09">
+                <h4 class="place-card__name">Newtown (Elmira)</h4>
+                <div class="place-card__period">August 1779</div>
+                <p class="place-card__summary">Battle site during the Sullivan-Clinton Campaign.</p>
+              </div>
+
+              <div class="place-card" data-lat="42.68" data-lng="-74.97">
+                <h4 class="place-card__name">Cherry Valley</h4>
+                <div class="place-card__period">November 1778</div>
+                <p class="place-card__summary">A controversial engagement of the frontier war.</p>
+              </div>
+
+              <div class="place-card" data-lat="43.38" data-lng="-80.42">
+                <h4 class="place-card__name">Woodland Cultural Centre</h4>
+                <div class="place-card__period">Present Day</div>
+                <p class="place-card__summary">Preserves and promotes First Nations culture and heritage.</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTORICAL MAP IMAGE -->
+    <section class="section section--parchment">
+      <div class="container">
+        <div class="text-center mb-3xl reveal">
+          <span class="accent-text">Historical Reference</span>
+          <h2 class="display-text mt-md">The Territory, c. 1720</h2>
+          <p class="lead-text" style="max-width: 600px; margin: var(--space-lg) auto 0;">
+            Before European encroachment accelerated, the Haudenosaunee Confederacy controlled a vast territory. This map shows the approximate territories of the Six Nations.
+          </p>
+        </div>
+
+        <div class="reveal-scale" style="max-width: 900px; margin: 0 auto;">
+          <figure>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Iroquois_6_Nations_map_c1720.png/1280px-Iroquois_6_Nations_map_c1720.png"
+                 alt="Historical map showing the territories of the Six Nations of the Haudenosaunee Confederacy, circa 1720"
+                 class="img-rounded img-shadow"
+                 loading="lazy">
+            <figcaption style="text-align: center; padding: var(--space-lg); font-size: var(--text-sm); color: var(--color-mist);">
+              Six Nations Territory, c. 1720 &middot; Historical Map &middot; Public Domain via Wikimedia Commons
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="grid grid-3 mt-3xl stagger-children">
+          <div style="text-align: center;">
+            <h4 style="color: var(--color-ochre);">The Eastern Door</h4>
+            <p style="font-size: var(--text-sm); color: var(--color-walnut);">The Mohawk — Thayendanegea's nation — held the eastern door of the Longhouse, serving as first contact with European newcomers.</p>
+          </div>
+          <div style="text-align: center;">
+            <h4 style="color: var(--color-ochre);">The Central Fire</h4>
+            <p style="font-size: var(--text-sm); color: var(--color-walnut);">The Onondaga kept the central fire of the Confederacy. Their territory was the seat of the Grand Council.</p>
+          </div>
+          <div style="text-align: center;">
+            <h4 style="color: var(--color-ochre);">The Western Door</h4>
+            <p style="font-size: var(--text-sm); color: var(--color-walnut);">The Seneca guarded the western door. Their vast territory stretched toward the Great Lakes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP LEGEND -->
+    <section class="section">
+      <div class="container container--sm">
+        <div class="text-center mb-2xl reveal">
+          <span class="accent-text">Understanding the Map</span>
+          <h2 class="display-text mt-md">Map Categories</h2>
+        </div>
+
+        <div class="grid grid-2 gap-lg reveal">
+          <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+            <div style="width: 16px; height: 16px; border-radius: 50%; background: #4A7C2E; flex-shrink: 0; margin-top: 4px;"></div>
+            <div>
+              <h4 style="font-size: var(--text-base); margin-bottom: 4px;">Origins</h4>
+              <p style="font-size: var(--text-sm); color: var(--color-walnut);">Birthplace, homeland communities, and formative locations.</p>
+            </div>
+          </div>
+          <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+            <div style="width: 16px; height: 16px; border-radius: 50%; background: #5B8FA8; flex-shrink: 0; margin-top: 4px;"></div>
+            <div>
+              <h4 style="font-size: var(--text-base); margin-bottom: 4px;">Diplomacy</h4>
+              <p style="font-size: var(--text-sm); color: var(--color-walnut);">Treaty sites, diplomatic meetings, and political negotiations.</p>
+            </div>
+          </div>
+          <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+            <div style="width: 16px; height: 16px; border-radius: 50%; background: #8B3A2A; flex-shrink: 0; margin-top: 4px;"></div>
+            <div>
+              <h4 style="font-size: var(--text-base); margin-bottom: 4px;">Conflict</h4>
+              <p style="font-size: var(--text-sm); color: var(--color-walnut);">Battle sites and locations of military significance during the Revolution.</p>
+            </div>
+          </div>
+          <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+            <div style="width: 16px; height: 16px; border-radius: 50%; background: #C4883A; flex-shrink: 0; margin-top: 4px;"></div>
+            <div>
+              <h4 style="font-size: var(--text-base); margin-bottom: 4px;">Settlement</h4>
+              <p style="font-size: var(--text-sm); color: var(--color-walnut);">Post-war resettlement locations along the Grand River and beyond.</p>
+            </div>
+          </div>
+          <div style="display: flex; gap: var(--space-md); align-items: flex-start;">
+            <div style="width: 16px; height: 16px; border-radius: 50%; background: #6B5B8A; flex-shrink: 0; margin-top: 4px;"></div>
+            <div>
+              <h4 style="font-size: var(--text-base); margin-bottom: 4px;">Modern Legacy</h4>
+              <p style="font-size: var(--text-sm); color: var(--color-walnut);">Present-day memorials, cultural centres, and heritage sites.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--earth text-center">
+      <div class="container reveal">
+        <span class="accent-text">Continue</span>
+        <h2 class="display-text mt-md" style="color: var(--color-parchment);">Explore the Source Vault</h2>
+        <p style="color: var(--color-smoke); max-width: 550px; margin: var(--space-lg) auto var(--space-2xl);">
+          See the portraits, letters, maps, and documents connected to these places.
+        </p>
+        <a href="sources.html" class="btn btn--primary btn--lg">Open the Source Vault</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col"><h4 class="footer-col__title">Explore</h4><a href="biography.html">Biography</a><a href="timeline.html">Timeline</a><a href="atlas.html">Atlas</a><a href="sources.html">Sources</a></div>
+        <div class="footer-col"><h4 class="footer-col__title">Discover</h4><a href="people.html">People</a><a href="language.html">Language</a><a href="legacy.html">Legacy</a></div>
+        <div class="footer-col"><h4 class="footer-col__title">About</h4><p>A living digital museum built with Indigenous respect, scholarly rigor, and modern storytelling.</p></div>
+        <div class="footer-col"><h4 class="footer-col__title">Map Data</h4><p>Interactive map powered by <a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a> with tiles by <a href="http://stamen.com" target="_blank" rel="noopener">Stamen Design</a>.</p></div>
+      </div>
+      <div class="footer-bottom"><p>Thayendanegea.com</p><p>Maps: <a href="https://www.openstreetmap.org" target="_blank" rel="noopener">OpenStreetMap</a></p></div>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin=""></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

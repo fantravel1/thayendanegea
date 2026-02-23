@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thayendanegea — The Living History of Joseph Brant &amp; the Haudenosaunee World</title>
+  <meta name="description" content="Thayendanegea.com is a living digital museum dedicated to Thayendanegea (Joseph Brant), the Mohawk leader, diplomat, and statesman. Explore the biography, interactive atlas, timeline, and source library of Haudenosaunee history.">
+  <meta name="keywords" content="Thayendanegea, Joseph Brant, Mohawk, Haudenosaunee, Six Nations, Iroquois Confederacy, Indigenous history, Grand River, Kanien'kehá:ka, Native American history, British colonial era, American Revolution">
+  <link rel="canonical" href="https://thayendanegea.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Thayendanegea — Living History of Joseph Brant &amp; the Haudenosaunee World">
+  <meta property="og:description" content="An experience-first digital museum: part interactive atlas, part biography engine, part source library — built with Indigenous respect, scholarly rigor, and modern storytelling.">
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/2/29/Joseph_Brant_painting_by_George_Romney_1776.jpg">
+  <meta property="og:url" content="https://thayendanegea.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Thayendanegea.com">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thayendanegea — Living History of Joseph Brant &amp; the Haudenosaunee World">
+  <meta name="twitter:description" content="A living digital museum dedicated to Thayendanegea, the Mohawk leader, diplomat, and statesman. Explore biography, maps, timeline, and primary sources.">
+  <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/2/29/Joseph_Brant_painting_by_George_Romney_1776.jpg">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Thayendanegea.com",
+    "url": "https://thayendanegea.com",
+    "description": "A living digital museum dedicated to Thayendanegea (Joseph Brant), the Mohawk leader, diplomat, and statesman.",
+    "about": {
+      "@type": "Person",
+      "name": "Thayendanegea (Joseph Brant)",
+      "birthDate": "1743-03",
+      "deathDate": "1807-11-24",
+      "nationality": "Mohawk / Kanien'kehá:ka",
+      "description": "Mohawk military and political leader during the American Revolutionary War"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ====== HEADER / NAVIGATION ====== -->
+  <header class="site-header site-header--dark" id="site-header">
+    <nav class="nav-wrapper" aria-label="Primary navigation">
+      <a href="index.html" class="site-logo">Thayendanegea<span>.com</span></a>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="biography.html">Biography</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="atlas.html">Atlas</a>
+        <a href="sources.html">Sources</a>
+        <a href="people.html">People</a>
+        <a href="language.html">Language</a>
+        <a href="legacy.html">Legacy</a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" aria-hidden="true"></div>
+  <nav class="mobile-menu" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="biography.html">Biography</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="atlas.html">Atlas</a>
+    <a href="sources.html">Sources</a>
+    <a href="people.html">People</a>
+    <a href="language.html">Language</a>
+    <a href="legacy.html">Legacy</a>
+  </nav>
+
+  <main>
+    <!-- ====== HERO SECTION ====== -->
+    <section class="hero" id="hero">
+      <div class="hero__bg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Joseph_Brant_painting_by_George_Romney_1776.jpg"
+             alt="Portrait of Thayendanegea (Joseph Brant) painted by George Romney in 1776, showing the Mohawk leader in traditional and European dress"
+             loading="eager">
+      </div>
+
+      <div class="hero__content">
+        <span class="hero__eyebrow">A Living Digital Museum</span>
+        <h1 class="hero__title display-text">
+          <em>Thayendanegea</em>
+        </h1>
+        <p class="hero__subtitle">
+          Mohawk leader. Diplomat. Translator of worlds.<br>
+          Explore the life, geography, and legacy of one of the most complex figures
+          in 18th-century North America — through Haudenosaunee eyes.
+        </p>
+        <div class="hero__ctas">
+          <a href="atlas.html" class="btn btn--primary btn--lg">
+            Explore the Atlas
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="timeline.html" class="btn btn--secondary btn--lg">
+            Start the Timeline
+          </a>
+          <a href="biography.html" class="btn btn--secondary">
+            Read the Biography
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span>Scroll to explore</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ====== CHOOSE YOUR LENS — 4 DOORS ====== -->
+    <section class="section section--parchment" id="doors">
+      <div class="container">
+        <div class="text-center mb-3xl reveal">
+          <span class="accent-text">Choose Your Lens</span>
+          <h2 class="display-text mt-md">Four Doors Into History</h2>
+          <p class="lead-text" style="max-width:620px; margin:var(--space-lg) auto 0;">
+            Every great story has more than one entry point. Choose the path that speaks to you.
+          </p>
+        </div>
+
+        <div class="grid grid-2 stagger-children" style="gap: var(--space-lg);">
+          <!-- Door 1: The Man -->
+          <a href="biography.html" class="door-card">
+            <div class="door-card__bg">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Joseph_Brant_by_William_Berczy.jpg"
+                   alt="Portrait of Thayendanegea by William Berczy, circa 1807, showing him in later life">
+            </div>
+            <div class="door-card__content">
+              <div class="door-card__number">01</div>
+              <h3 class="door-card__title">The Man</h3>
+              <p class="door-card__desc">
+                Biography &amp; character. From the Mohawk Valley to the courts of London — the full life of Thayendanegea in cinematic chapters.
+              </p>
+              <span class="door-card__arrow">
+                Explore
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Door 2: The World -->
+          <a href="timeline.html" class="door-card">
+            <div class="door-card__bg">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Hiawatha_belt.svg/1280px-Hiawatha_belt.svg.png"
+                   alt="The Hiawatha Belt, a wampum belt symbolizing the founding of the Haudenosaunee Confederacy — five nations joined together">
+            </div>
+            <div class="door-card__content">
+              <div class="door-card__number">02</div>
+              <h3 class="door-card__title">The World</h3>
+              <p class="door-card__desc">
+                Haudenosaunee politics, 18th-century geopolitics, the American Revolution, and the forces that shaped an era of survival and diplomacy.
+              </p>
+              <span class="door-card__arrow">
+                Explore
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Door 3: The Map -->
+          <a href="atlas.html" class="door-card">
+            <div class="door-card__bg">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Iroquois_6_Nations_map_c1720.png/1280px-Iroquois_6_Nations_map_c1720.png"
+                   alt="Historical map of the Six Nations territory, circa 1720, showing Haudenosaunee homeland across present-day New York State">
+            </div>
+            <div class="door-card__content">
+              <div class="door-card__number">03</div>
+              <h3 class="door-card__title">The Map</h3>
+              <p class="door-card__desc">
+                An interactive atlas of places, routes, settlements, and memorials — from the Mohawk Valley to the Grand River and across the Atlantic.
+              </p>
+              <span class="door-card__arrow">
+                Explore
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Door 4: The Sources -->
+          <a href="sources.html" class="door-card">
+            <div class="door-card__bg">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Joseph_Brant_%28Gilbert_Stuart%29.jpg/800px-Joseph_Brant_%28Gilbert_Stuart%29.jpg"
+                   alt="Portrait of Joseph Brant by Gilbert Stuart, 1786 — one of the most reproduced images of Thayendanegea">
+            </div>
+            <div class="door-card__content">
+              <div class="door-card__number">04</div>
+              <h3 class="door-card__title">The Sources</h3>
+              <p class="door-card__desc">
+                Letters, portraits, speeches, treaties, and records — a curated archive of primary sources with context and provenance.
+              </p>
+              <span class="door-card__arrow">
+                Explore
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== STATS BAR ====== -->
+    <section class="section section--earth">
+      <div class="container">
+        <div class="stats-row reveal">
+          <div class="stat">
+            <div class="stat__number" data-count="64" data-suffix="+">0</div>
+            <div class="stat__label">Years of Leadership</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number" data-count="6">0</div>
+            <div class="stat__label">Nations United</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number" data-count="2">0</div>
+            <div class="stat__label">Journeys to London</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number" data-count="1785" data-suffix="">0</div>
+            <div class="stat__label">Chapel of the Mohawks</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SCROLL MUSEUM ====== -->
+    <section class="section" id="scroll-museum">
+      <div class="container">
+        <div class="text-center mb-3xl reveal">
+          <span class="accent-text">The Scroll Museum</span>
+          <h2 class="display-text mt-md">Artifacts That Tell the Story</h2>
+          <div class="divider divider--center mt-lg"></div>
+        </div>
+
+        <!-- Museum Item 1 -->
+        <article class="scroll-museum__item reveal">
+          <div class="scroll-museum__media">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Joseph_Brant_painting_by_George_Romney_1776.jpg"
+                 alt="George Romney's 1776 portrait of Thayendanegea (Joseph Brant), National Gallery of Canada"
+                 loading="lazy">
+            <div class="scroll-museum__caption">
+              <p>George Romney, 1776 &middot; Oil on canvas &middot; National Gallery of Canada &middot; Public Domain</p>
+            </div>
+          </div>
+          <div class="scroll-museum__text">
+            <span class="accent-text">Portrait</span>
+            <h3>The Romney Portrait, 1776</h3>
+            <p class="lead-text">
+              Painted during Thayendanegea's first visit to London, this portrait by George Romney
+              became one of the most iconic images of any Indigenous leader in the 18th century.
+            </p>
+            <p>
+              Romney captured Thayendanegea wearing a mix of Mohawk and European dress — a visual metaphor
+              for the man himself, who moved between worlds with extraordinary fluency. The painting
+              was exhibited at the Royal Academy and sparked fascination across British society.
+            </p>
+            <a href="sources.html" class="btn btn--outline btn--sm mt-lg">
+              View in Source Vault
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Museum Item 2 -->
+        <article class="scroll-museum__item reveal">
+          <div class="scroll-museum__media">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Hiawatha_belt.svg/1280px-Hiawatha_belt.svg.png"
+                 alt="The Hiawatha Belt — a wampum belt representing the five founding nations of the Haudenosaunee Confederacy"
+                 loading="lazy">
+            <div class="scroll-museum__caption">
+              <p>Hiawatha Belt &middot; Wampum &middot; Symbol of the Haudenosaunee Confederacy &middot; Public Domain</p>
+            </div>
+          </div>
+          <div class="scroll-museum__text">
+            <span class="accent-text">Symbol</span>
+            <h3>The Hiawatha Belt</h3>
+            <p class="lead-text">
+              This wampum belt represents the founding of the Haudenosaunee Confederacy —
+              one of the oldest participatory democracies on Earth.
+            </p>
+            <p>
+              The five squares represent the five original nations: Seneca, Cayuga, Onondaga,
+              Oneida, and Mohawk. The white lines connecting them symbolize the path of peace.
+              Thayendanegea's entire political life was grounded in this system of governance,
+              alliance, and diplomatic protocol that long predated European contact.
+            </p>
+            <a href="timeline.html" class="btn btn--outline btn--sm mt-lg">
+              Explore the Timeline
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Museum Item 3 -->
+        <article class="scroll-museum__item reveal">
+          <div class="scroll-museum__media">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Iroquois_6_Nations_map_c1720.png/1280px-Iroquois_6_Nations_map_c1720.png"
+                 alt="Map showing the territories of the Six Nations of the Iroquois Confederacy, circa 1720"
+                 loading="lazy">
+            <div class="scroll-museum__caption">
+              <p>Six Nations Territory, c. 1720 &middot; Historical Map &middot; Public Domain</p>
+            </div>
+          </div>
+          <div class="scroll-museum__text">
+            <span class="accent-text">Geography</span>
+            <h3>The Haudenosaunee Homeland</h3>
+            <p class="lead-text">
+              Before European encroachment accelerated, the Haudenosaunee Confederacy controlled
+              a vast territory across what is now upstate New York and beyond.
+            </p>
+            <p>
+              This map shows the approximate territories of the Six Nations around 1720.
+              The Mohawk — Thayendanegea's nation — held the eastern door of the Longhouse,
+              serving as the first line of diplomatic contact with European newcomers.
+              Understanding this geography is essential to understanding why his choices mattered.
+            </p>
+            <a href="atlas.html" class="btn btn--outline btn--sm mt-lg">
+              Open the Atlas
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Museum Item 4 -->
+        <article class="scroll-museum__item reveal">
+          <div class="scroll-museum__media">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Joseph_Brant_by_William_Berczy.jpg"
+                 alt="Portrait of Thayendanegea painted by William Berczy circa 1807, one of the last portraits made during his lifetime"
+                 loading="lazy">
+            <div class="scroll-museum__caption">
+              <p>William Berczy, c. 1807 &middot; Oil on canvas &middot; National Gallery of Canada &middot; Public Domain</p>
+            </div>
+          </div>
+          <div class="scroll-museum__text">
+            <span class="accent-text">Legacy</span>
+            <h3>The Berczy Portrait, c. 1807</h3>
+            <p class="lead-text">
+              One of the last portraits painted during Thayendanegea's lifetime, this William Berczy
+              painting shows a leader in his final years — still dignified, still purposeful.
+            </p>
+            <p>
+              By 1807, Thayendanegea had spent decades fighting for Haudenosaunee land rights,
+              managing the Grand River settlement, translating religious texts into Mohawk,
+              and navigating the treacherous politics of a post-revolutionary world.
+              His legacy remains both celebrated and debated — a sign of his enduring complexity.
+            </p>
+            <a href="legacy.html" class="btn btn--outline btn--sm mt-lg">
+              Explore the Legacy
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====== VIDEO DEEP DIVES ====== -->
+    <section class="section section--dark" id="videos">
+      <div class="container">
+        <div class="text-center mb-3xl reveal">
+          <span class="accent-text">Deep Dives</span>
+          <h2 class="display-text mt-md">Watch &amp; Learn</h2>
+          <p class="lead-text" style="max-width:600px; margin:var(--space-lg) auto 0; color: var(--color-smoke);">
+            Curated video content exploring Thayendanegea, the Haudenosaunee Confederacy, and the history of the Six Nations.
+          </p>
+        </div>
+
+        <div class="video-section stagger-children">
+          <!-- Video 1 -->
+          <div class="video-card reveal">
+            <div class="video-card__embed">
+              <iframe src="https://www.youtube.com/embed/OvUaFMmER4E"
+                      title="Joseph Brant (Thayendanegea) — Mohawk Leader &amp; Diplomat"
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+            </div>
+            <div class="video-card__body">
+              <h3 class="video-card__title">Joseph Brant: Mohawk Warrior &amp; Statesman</h3>
+              <p class="video-card__desc">
+                An in-depth exploration of Thayendanegea's life, from his upbringing in the Mohawk Valley
+                to his pivotal role during the American Revolution and the founding of the Grand River settlement.
+              </p>
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="video-card reveal">
+            <div class="video-card__embed">
+              <iframe src="https://www.youtube.com/embed/JEb_gZkPxQ8"
+                      title="The Haudenosaunee Confederacy — The Great Law of Peace"
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+            </div>
+            <div class="video-card__body">
+              <h3 class="video-card__title">The Haudenosaunee Confederacy</h3>
+              <p class="video-card__desc">
+                Understanding the Great Law of Peace — the constitutional framework of the
+                Haudenosaunee Confederacy that shaped governance, diplomacy, and identity for centuries.
+              </p>
+            </div>
+          </div>
+
+          <!-- Video 3 -->
+          <div class="video-card reveal">
+            <div class="video-card__embed">
+              <iframe src="https://www.youtube.com/embed/z8gU18xbMHo"
+                      title="The Iroquois Confederacy — History &amp; Culture"
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+            </div>
+            <div class="video-card__body">
+              <h3 class="video-card__title">The Iroquois Confederacy: History &amp; Culture</h3>
+              <p class="video-card__desc">
+                A comprehensive documentary exploring the history, culture, and governance
+                of the Six Nations — from the founding of the Confederacy to the modern era.
+              </p>
+            </div>
+          </div>
+
+          <!-- Video 4 -->
+          <div class="video-card reveal">
+            <div class="video-card__embed">
+              <iframe src="https://www.youtube.com/embed/44OhQRnMNyU"
+                      title="Six Nations of the Grand River — Heritage &amp; Identity"
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+            </div>
+            <div class="video-card__body">
+              <h3 class="video-card__title">Six Nations of the Grand River</h3>
+              <p class="video-card__desc">
+                Exploring the living heritage of the Six Nations of the Grand River —
+                Thayendanegea's lasting legacy and the vibrant community that endures today.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== WHY THIS SITE EXISTS ====== -->
+    <section class="section section--linen" id="about">
+      <div class="container container--sm">
+        <div class="text-center reveal">
+          <span class="accent-text">Our Commitment</span>
+          <h2 class="display-text mt-md">Why This Site Exists</h2>
+          <div class="divider divider--center mt-lg mb-2xl"></div>
+        </div>
+
+        <div class="reveal">
+          <blockquote>
+            "History has many cunning passages, contrived corridors and issues."
+            <cite>T.S. Eliot</cite>
+          </blockquote>
+
+          <p class="lead-text mt-2xl">
+            Most resources about Thayendanegea are either too academic to access easily,
+            too simplified to capture complexity, or too rooted in colonial framing
+            to honor Haudenosaunee perspectives.
+          </p>
+
+          <p class="mt-lg">
+            <strong>Thayendanegea.com</strong> is built to change that. This site unifies biography,
+            geography, diplomacy, primary sources, and living community connections into a single,
+            respectful, visually compelling platform. We are committed to:
+          </p>
+
+          <ul style="margin-top: var(--space-lg); padding-left: var(--space-xl);">
+            <li style="list-style: disc; margin-bottom: var(--space-sm); color: var(--color-walnut);">
+              <strong>No exoticizing</strong> — presenting Indigenous history with dignity, not spectacle
+            </li>
+            <li style="list-style: disc; margin-bottom: var(--space-sm); color: var(--color-walnut);">
+              <strong>Multi-perspective framing</strong> — honoring community, historical, and systems-level interpretations
+            </li>
+            <li style="list-style: disc; margin-bottom: var(--space-sm); color: var(--color-walnut);">
+              <strong>Scholarly rigor</strong> — citing museums, archives, and reputable scholarship
+            </li>
+            <li style="list-style: disc; margin-bottom: var(--space-sm); color: var(--color-walnut);">
+              <strong>Living connections</strong> — linking to modern Haudenosaunee communities and institutions
+            </li>
+            <li style="list-style: disc; margin-bottom: var(--space-sm); color: var(--color-walnut);">
+              <strong>No violence glamorization</strong> — contextualizing conflict without sensationalism
+            </li>
+          </ul>
+
+          <p class="mt-lg text-center">
+            <a href="biography.html" class="btn btn--dark btn--lg mt-lg">
+              Begin With the Biography
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== EXPLORE MORE ====== -->
+    <section class="section" id="explore">
+      <div class="container">
+        <div class="text-center mb-3xl reveal">
+          <span class="accent-text">Explore</span>
+          <h2 class="display-text mt-md">Go Deeper</h2>
+        </div>
+
+        <div class="grid grid-3 stagger-children">
+          <div class="card reveal">
+            <div class="card__image">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Joseph_Brant_%28Gilbert_Stuart%29.jpg/800px-Joseph_Brant_%28Gilbert_Stuart%29.jpg"
+                   alt="Portrait of Joseph Brant by Gilbert Stuart, 1786"
+                   loading="lazy">
+            </div>
+            <div class="card__body">
+              <span class="card__eyebrow">People</span>
+              <h3 class="card__title">Diplomacy Network</h3>
+              <p class="card__desc">
+                Explore the web of alliances, rivalries, and relationships that shaped Thayendanegea's world — from British generals to Haudenosaunee sachems.
+              </p>
+              <a href="people.html" class="card__link">
+                Explore the Network
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card__image" style="background: var(--color-forest); display: flex; align-items: center; justify-content: center;">
+              <div style="text-align: center; padding: var(--space-xl); color: var(--color-parchment);">
+                <span style="font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 700; display: block;">Shé:kon</span>
+                <span style="font-family: var(--font-heading); font-size: var(--text-base); opacity: 0.8;">Greetings (Mohawk)</span>
+              </div>
+            </div>
+            <div class="card__body">
+              <span class="card__eyebrow">Language</span>
+              <h3 class="card__title">Kanien'kéha Gateway</h3>
+              <p class="card__desc">
+                Understand the name "Thayendanegea," explore Mohawk pronunciation, and discover key terms from the world he inhabited.
+              </p>
+              <a href="language.html" class="card__link">
+                Learn the Language
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card__image">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/HerMajestysRoyalChapelOfTheMohawks.jpg/1280px-HerMajestysRoyalChapelOfTheMohawks.jpg"
+                   alt="Her Majesty's Chapel of the Mohawks in Brantford, Ontario — the oldest Protestant church in Ontario, founded 1785"
+                   loading="lazy">
+            </div>
+            <div class="card__body">
+              <span class="card__eyebrow">Legacy</span>
+              <h3 class="card__title">Monuments &amp; Memory</h3>
+              <p class="card__desc">
+                From plaques to public debate, discover how Thayendanegea is remembered, honored, and reassessed in the modern world.
+              </p>
+              <a href="legacy.html" class="card__link">
+                Explore the Legacy
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 class="footer-col__title">Explore</h4>
+          <a href="biography.html">Biography</a>
+          <a href="timeline.html">Timeline</a>
+          <a href="atlas.html">Interactive Atlas</a>
+          <a href="sources.html">Source Vault</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__title">Discover</h4>
+          <a href="people.html">People &amp; Diplomacy</a>
+          <a href="language.html">Language &amp; Naming</a>
+          <a href="legacy.html">Legacy &amp; Monuments</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__title">About</h4>
+          <p>
+            Thayendanegea.com is a living digital museum built with Indigenous respect,
+            scholarly rigor, and modern storytelling. All images are sourced from
+            public domain collections and attributed to their original creators.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__title">Respect &amp; Ethics</h4>
+          <p>
+            This site is committed to multi-perspective framing, community consultation,
+            and responsible representation of Indigenous history and living cultures.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Thayendanegea.com &mdash; A Living Biography + Atlas + Source Library</p>
+        <p>
+          Images: <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a> &middot;
+          Maps: <a href="https://www.openstreetmap.org" target="_blank" rel="noopener">OpenStreetMap</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
