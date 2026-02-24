@@ -761,6 +761,55 @@
   }
 
   /* ----------------------------------------------------------
+     READING PROGRESS BAR (Biography page)
+     ---------------------------------------------------------- */
+  var progressBar = document.getElementById('reading-progress-bar');
+  if (progressBar) {
+    window.addEventListener('scroll', function () {
+      var scrollTop = window.scrollY;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = Math.min(progress, 100) + '%';
+    }, { passive: true });
+  }
+
+  /* ----------------------------------------------------------
+     QUOTE CAROUSEL (Home page)
+     ---------------------------------------------------------- */
+  var quoteSlides = document.querySelectorAll('.quote-slide');
+  var quoteDots = document.querySelectorAll('.quote-dot');
+  var currentSlide = 0;
+  var autoPlayInterval = null;
+
+  function showQuoteSlide(index) {
+    if (quoteSlides.length === 0) return;
+    quoteSlides.forEach(function (slide) { slide.classList.remove('active'); });
+    quoteDots.forEach(function (dot) { dot.classList.remove('active'); });
+    currentSlide = ((index % quoteSlides.length) + quoteSlides.length) % quoteSlides.length;
+    quoteSlides[currentSlide].classList.add('active');
+    if (quoteDots[currentSlide]) quoteDots[currentSlide].classList.add('active');
+  }
+
+  function startQuoteAutoplay() {
+    if (quoteSlides.length < 2) return;
+    autoPlayInterval = setInterval(function () {
+      showQuoteSlide(currentSlide + 1);
+    }, 7000);
+  }
+
+  if (quoteDots.length > 0) {
+    quoteDots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        var slideIndex = parseInt(dot.getAttribute('data-slide'), 10);
+        showQuoteSlide(slideIndex);
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
+        startQuoteAutoplay();
+      });
+    });
+    startQuoteAutoplay();
+  }
+
+  /* ----------------------------------------------------------
      PRINT-FRIENDLY: Add URL after links when printing
      ---------------------------------------------------------- */
   // This is handled by CSS @media print
