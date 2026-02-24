@@ -2406,6 +2406,405 @@ blockquote cite {
 }
 
 /* ============================================================
+   READING PROGRESS BAR
+   ============================================================ */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 10000;
+  background: transparent;
+}
+
+.reading-progress__bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-ochre), var(--color-gold));
+  transition: width 0.1s linear;
+}
+
+/* ============================================================
+   QUOTE CAROUSEL
+   ============================================================ */
+.quote-carousel {
+  position: relative;
+  min-height: 220px;
+}
+
+.quote-slide {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+.quote-slide.active {
+  opacity: 1;
+  position: relative;
+  pointer-events: auto;
+}
+
+.featured-quote {
+  text-align: center;
+  border-left: none;
+  padding: 0;
+  margin: 0;
+}
+
+.featured-quote p {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  line-height: 1.7;
+  color: var(--color-parchment);
+  font-style: italic;
+}
+
+.featured-quote cite {
+  display: block;
+  margin-top: var(--space-lg);
+  font-style: normal;
+}
+
+.featured-quote cite strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+.featured-quote cite span {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-smoke);
+  margin-top: var(--space-xs);
+}
+
+.quote-nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.quote-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--color-smoke);
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  padding: 0;
+}
+
+.quote-dot.active {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+.quote-dot:hover {
+  border-color: var(--color-gold);
+}
+
+@media (max-width: 768px) {
+  .featured-quote p {
+    font-size: var(--text-lg);
+  }
+}
+
+/* ============================================================
+   NAVIGATION TILES (Home page — Explore All Pages)
+   ============================================================ */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.nav-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-xl) var(--space-lg);
+  border-radius: var(--border-radius-lg);
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-base);
+  border: 1px solid transparent;
+}
+
+.nav-tile:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  border-color: var(--color-ochre);
+}
+
+.nav-tile--home {
+  background: var(--color-bark);
+  color: var(--color-parchment);
+}
+
+.nav-tile--home:hover {
+  background: var(--color-earth);
+}
+
+.nav-tile__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-linen);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+}
+
+.nav-tile--home .nav-tile__icon {
+  background: rgba(255,255,255,0.1);
+}
+
+.nav-tile__icon svg {
+  stroke: var(--color-ochre);
+}
+
+.nav-tile--home .nav-tile__icon svg {
+  stroke: var(--color-gold);
+}
+
+.nav-tile__title {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-bark);
+  margin-bottom: var(--space-xs);
+}
+
+.nav-tile--home .nav-tile__title {
+  color: var(--color-parchment);
+}
+
+.nav-tile__desc {
+  font-size: var(--text-sm);
+  color: var(--color-mist);
+  line-height: 1.5;
+}
+
+.nav-tile--home .nav-tile__desc {
+  color: var(--color-smoke);
+}
+
+/* ============================================================
+   DECISION CARDS (Timeline page — Key Decision Points)
+   ============================================================ */
+.decision-points {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.decision-card {
+  display: flex;
+  gap: var(--space-xl);
+  padding-bottom: var(--space-2xl);
+  position: relative;
+}
+
+.decision-card:last-child {
+  padding-bottom: 0;
+}
+
+.decision-card__marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 60px;
+}
+
+.decision-card__year {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-white);
+  background: var(--color-ochre);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius-sm);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.decision-card__line {
+  flex: 1;
+  width: 2px;
+  background: var(--color-ochre);
+  opacity: 0.3;
+  margin-top: var(--space-sm);
+}
+
+.decision-card:last-child .decision-card__line {
+  display: none;
+}
+
+.decision-card__body {
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  flex: 1;
+  transition: all var(--transition-base);
+}
+
+.decision-card__body:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.decision-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-bark);
+  margin-bottom: var(--space-sm);
+}
+
+.decision-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-walnut);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+.decision-card__impact {
+  font-size: var(--text-sm);
+  color: var(--color-forest);
+  padding: var(--space-md);
+  background: rgba(74, 124, 46, 0.06);
+  border-radius: var(--border-radius-sm);
+  border-left: 3px solid var(--color-forest);
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .decision-card {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .decision-card__marker {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .decision-card__line {
+    display: none;
+  }
+}
+
+/* ============================================================
+   WORD BREAKDOWN (Language page — Polysynthetic Demo)
+   ============================================================ */
+.word-breakdown {
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.word-breakdown__header {
+  background: var(--color-bark);
+  padding: var(--space-xl);
+  text-align: center;
+}
+
+.word-breakdown__word {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--color-gold);
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.word-breakdown__english {
+  font-size: var(--text-sm);
+  color: var(--color-smoke);
+  margin-top: var(--space-sm);
+  font-style: italic;
+}
+
+.word-breakdown__parts {
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--space-lg);
+  gap: var(--space-xs);
+  justify-content: center;
+}
+
+.word-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-linen);
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-base);
+}
+
+.word-part:hover {
+  background: var(--color-ochre);
+}
+
+.word-part:hover .word-part__segment {
+  color: var(--color-white);
+}
+
+.word-part:hover .word-part__meaning {
+  color: rgba(255,255,255,0.8);
+}
+
+.word-part__segment {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-ochre);
+  transition: color var(--transition-base);
+}
+
+.word-part__meaning {
+  font-size: var(--text-xs);
+  color: var(--color-mist);
+  margin-top: 2px;
+  transition: color var(--transition-base);
+}
+
+@media (max-width: 600px) {
+  .word-breakdown__word {
+    font-size: var(--text-lg);
+  }
+
+  .word-breakdown__parts {
+    gap: var(--space-xs);
+  }
+}
+
+/* ============================================================
    PRINT STYLES
    ============================================================ */
 @media print {
@@ -2413,7 +2812,8 @@ blockquote cite {
   .nav-toggle,
   .mobile-menu,
   .mobile-overlay,
-  .hero__scroll-hint {
+  .hero__scroll-hint,
+  .reading-progress {
     display: none !important;
   }
 
